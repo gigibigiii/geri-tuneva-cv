@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Keeps the site out of search engines. Remove this line to let Google list it. -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>Geri Tuneva</title>
+  <meta name="description" content="Geri Tuneva — Head of EMEA Demand Generation at Stripe, London.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --display: "Fraunces", Georgia, serif;
+      --bg: #faf8f5;
+      --surface: #ffffff;
+      --text: #1a1a1a;
+      --muted: #74716c;
+      --line: #e9e5df;
+      --accent: #635bff;
+      --accent-soft: #eeedff;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #121212;
+        --surface: #1a1a1a;
+        --text: #f1efeb;
+        --muted: #9b978f;
+        --line: #2a2a2a;
+        --accent: #8f89ff;
+        --accent-soft: #23214a;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 88px 24px 64px;
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 96px;
+    }
+    .photo {
+      width: 168px;
+      height: 168px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: var(--accent-soft);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 0 0 6px var(--surface), 0 0 0 7px var(--line);
+    }
+    .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .photo .initials {
+      font-family: var(--display);
+      font-size: 3.5rem;
+      color: var(--accent);
+    }
+    .name {
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+    }
+    .headline {
+      font-family: var(--display);
+      font-weight: 400;
+      font-size: 3rem;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin: 10px 0 16px;
+    }
+    .headline em { color: var(--accent); }
+    .role { color: var(--muted); }
+    .role strong { color: var(--text); font-weight: 500; }
+    .links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 18px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      color: var(--text);
+      border: 1px solid var(--line);
+      background: var(--surface);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .btn:hover { border-color: var(--accent); transform: translateY(-1px); }
+    .btn.primary { background: var(--text); color: var(--bg); border-color: var(--text); }
+    .btn svg { width: 16px; height: 16px; fill: currentColor; }
+
+    /* Sections */
+    section { margin-bottom: 72px; }
+    h2 {
+      font-family: var(--display);
+      font-weight: 400;
+      font-size: 1.9rem;
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+    .about { font-size: 1.15rem; line-height: 1.7; }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 32px;
+    }
+    .stat {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 20px;
+    }
+    .stat b {
+      display: block;
+      font-family: var(--display);
+      font-weight: 400;
+      font-size: 2.2rem;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat span { font-size: 0.85rem; color: var(--muted); }
+
+    /* Timeline */
+    .timeline { list-style: none; border-left: 1px solid var(--line); margin-left: 22px; }
+    .job { position: relative; padding: 0 0 40px 44px; }
+    .job:last-child { padding-bottom: 0; }
+    .logo {
+      position: absolute;
+      left: -22px;
+      top: -6px;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--surface);
+      box-shadow: 0 0 0 4px var(--bg), 0 0 0 5px var(--line);
+    }
+    .logo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .job.current .logo { box-shadow: 0 0 0 4px var(--bg), 0 0 0 6px var(--accent); }
+    .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; min-height: 32px; }
+    .company { font-size: 1.15rem; font-weight: 600; }
+    .years { color: var(--muted); font-size: 0.85rem; white-space: nowrap; }
+    .roles { list-style: none; margin-top: 8px; }
+    .roles li {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 3px 0;
+      font-size: 0.95rem;
+    }
+    .roles .when { color: var(--muted); font-size: 0.85rem; white-space: nowrap; }
+    .desc { margin-top: 10px; font-size: 0.95rem; color: var(--muted); }
+
+    /* Cards */
+    .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 20px;
+    }
+    .card .when { font-size: 0.8rem; color: var(--muted); }
+    .card .title { font-weight: 600; margin-top: 4px; }
+    .card .org { color: var(--muted); font-size: 0.9rem; }
+    .card.wide { grid-column: 1 / -1; }
+
+    .card.with-logo { display: flex; gap: 16px; align-items: center; }
+    .card-logo { width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0; }
+
+    /* Testimonials */
+    .featured {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 36px;
+      margin-bottom: 12px;
+    }
+    .featured blockquote {
+      font-family: var(--display);
+      font-size: 1.75rem;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+    blockquote mark {
+      background: linear-gradient(transparent 60%, var(--accent-soft) 60%);
+      color: inherit;
+    }
+    .quotes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .quote {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .quote blockquote { font-size: 0.98rem; line-height: 1.55; }
+    .quote blockquote::before, .featured blockquote::before {
+      content: "\201C";
+      display: block;
+      font-family: var(--display);
+      font-size: 2.6rem;
+      line-height: 0.6;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .featured blockquote::before { font-size: 4rem; margin-bottom: 18px; }
+    .who { font-size: 0.85rem; line-height: 1.4; }
+    .who b { display: block; font-weight: 600; }
+    .who span { color: var(--muted); }
+    .featured .who { margin-top: 24px; }
+
+    .skills { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; }
+    .skills li {
+      font-size: 0.9rem;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    footer {
+      margin-top: 96px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    footer a { color: var(--muted); }
+
+    /* Gentle entrance */
+    .reveal { opacity: 0; transform: translateY(12px); animation: rise 0.7s ease forwards; }
+    .reveal:nth-child(2) { animation-delay: 0.08s; }
+    .reveal:nth-child(3) { animation-delay: 0.16s; }
+    .reveal:nth-child(4) { animation-delay: 0.24s; }
+    .reveal:nth-child(5) { animation-delay: 0.32s; }
+    .reveal:nth-child(6) { animation-delay: 0.40s; }
+    .reveal:nth-child(7) { animation-delay: 0.48s; }
+    @keyframes rise { to { opacity: 1; transform: none; } }
+    @media (prefers-reduced-motion: reduce) { .reveal { animation: none; opacity: 1; transform: none; } }
+
+    @media (max-width: 640px) {
+      main { padding: 56px 16px 48px; }
+      .hero { grid-template-columns: 1fr; gap: 28px; margin-bottom: 72px; }
+      .photo { width: 120px; height: 120px; }
+      .photo .initials { font-size: 2.6rem; }
+      .headline { font-size: 2.3rem; }
+      .stats { grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+      .stat { padding: 14px; }
+      .stat b { font-size: 1.7rem; }
+      .cards { grid-template-columns: 1fr; }
+      .quotes { grid-template-columns: 1fr; }
+      .featured { padding: 24px; }
+      .featured blockquote { font-size: 1.4rem; }
+      .roles li { flex-direction: column; gap: 0; padding: 4px 0; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="hero reveal">
+      <div class="photo">
+        <!-- Add a photo named photo.jpg to this folder and it will appear here -->
+        <img src="photo.jpg" alt="Geri Tuneva" onerror="this.remove(); document.querySelector('.photo').innerHTML='<span class=&quot;initials&quot;>GT</span>'">
+      </div>
+      <div>
+        <p class="name">Geri Tuneva</p>
+        <h1 class="headline">Turning attention into <em>pipeline.</em></h1>
+        <p class="role"><strong>Head of EMEA Demand Generation</strong> at Stripe · London</p>
+        <div class="links">
+          <a class="btn primary" href="https://www.linkedin.com/in/gerituneva/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            Connect on LinkedIn
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <section class="reveal">
+      <h2>About</h2>
+      <p class="about">B2B marketing leader with 15+ years in fintech and SaaS. I build and scale demand generation, campaign and ABM programmes that drive pipeline and growth, and I currently lead demand generation across EMEA at Stripe.</p>
+      <div class="stats">
+        <div class="stat"><b>15+</b><span>years in B2B marketing</span></div>
+        <div class="stat"><b>7+</b><span>years at Stripe</span></div>
+        <div class="stat"><b>EMEA</b><span>regional leadership</span></div>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <h2>Experience</h2>
+      <ol class="timeline">
+        <li class="job current">
+          <div class="logo"><img src="logos/stripe.jpg" alt="Stripe logo"></div>
+          <div class="job-head"><span class="company">Stripe</span><span class="years">2019 — Present</span></div>
+          <ul class="roles">
+            <li><span>Head of EMEA Demand Generation</span><span class="when">2021 — Present</span></li>
+            <li><span>Global Head of Customer Marketing Campaigns (interim)</span><span class="when">2023 — 2024</span></li>
+            <li><span>EMEA Campaigns Lead</span><span class="when">2019 — 2021</span></li>
+          </ul>
+        </li>
+        <li class="job">
+          <div class="logo"><img src="logos/qubit.jpg" alt="Qubit logo"></div>
+          <div class="job-head"><span class="company">Qubit</span><span class="years">2012 — 2019</span></div>
+          <ul class="roles">
+            <li><span>Director of Demand Generation</span><span class="when">2018 — 2019</span></li>
+            <li><span>Head of Marketing, EMEA</span><span class="when">2016 — 2017</span></li>
+            <li><span>Head of Marketing, UK</span><span class="when">2014 — 2015</span></li>
+            <li><span>Product Marketing Manager</span><span class="when">2012 — 2013</span></li>
+          </ul>
+          <p class="desc">Led global demand generation for a personalisation SaaS platform, owning awareness, new customer acquisition, inbound and ABM.</p>
+        </li>
+        <li class="job">
+          <div class="logo"><img src="logos/theprintspace.jpg" alt="theprintspace logo"></div>
+          <div class="job-head"><span class="company">theprintspace</span><span class="years">2009 — 2012</span></div>
+          <ul class="roles">
+            <li><span>Marketing Director</span><span class="when">2011 — 2012</span></li>
+            <li><span>Marketing Manager</span><span class="when">2010 — 2011</span></li>
+            <li><span>Marketing Executive</span><span class="when">2009 — 2010</span></li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+
+    <section class="reveal">
+      <h2>Kind words</h2>
+      <figure class="featured">
+        <blockquote>Embodies everything you would want from a <mark>21st century marketer</mark>. Data driven, comfortable with failing fast (and learning faster)&hellip; <mark>I would hire her again in a heartbeat.</mark></blockquote>
+        <figcaption class="who"><b>Ian McCaig</b><span>Managed Geri at Qubit</span></figcaption>
+      </figure>
+      <div class="quotes">
+        <figure class="quote">
+          <blockquote>Built out a <mark>fantastically strong European marketing function</mark>&hellip; absolutely central to Qubit&rsquo;s strong growth.</blockquote>
+          <figcaption class="who"><b>Stephen Eggleston</b><span>Chief Commercial Officer, Farfetch &middot; worked with Geri at Qubit</span></figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote>Everything you want in a marketing leader: curious, agile, strategic, data-driven and <mark>absolutely tireless in the search for &lsquo;better&rsquo;</mark>.</blockquote>
+          <figcaption class="who"><b>Mark Choueke</b><span>Former Editor, Marketing Week &middot; worked with Geri at Qubit</span></figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote>An incredible ability to <mark>challenge productively</mark> and drive accountability on marketing performance. Extremely focused on results.</blockquote>
+          <figcaption class="who"><b>Greg Dorban</b><span>Agency partner to Geri, 2020</span></figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote>Genuine, talented and an amazing marketer&hellip; a <mark>calm charisma combined with empathy</mark> that makes her a natural leader.</blockquote>
+          <figcaption class="who"><b>Toby Radcliffe</b><span>Studied with Geri</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <h2>Education &amp; recognition</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="when">2007 — 2008</div>
+          <div class="title">MSc Marketing &amp; Strategy</div>
+          <div class="org">Warwick Business School · First Class with Distinction</div>
+        </div>
+        <div class="card">
+          <div class="when">2004 — 2007</div>
+          <div class="title">BA Business Studies (Marketing)</div>
+          <div class="org">University of Sheffield · First Class Honours</div>
+        </div>
+        <div class="card wide with-logo">
+          <img class="card-logo" src="logos/marketing-academy.jpg" alt="The Marketing Academy logo">
+          <div>
+          <div class="when">2015 — 2016</div>
+          <div class="title">Marketing Academy Scholar</div>
+          <div class="org">One of 30 UK marketers selected from 350+ nominations</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <h2>What I do</h2>
+      <ul class="skills">
+        <li>Demand Generation</li>
+        <li>ABM</li>
+        <li>Integrated Campaigns</li>
+        <li>Marketing Strategy</li>
+        <li>Digital Marketing</li>
+        <li>Product Marketing</li>
+        <li>Brand Development</li>
+        <li>Team Leadership</li>
+      </ul>
+    </section>
+
+    <footer>
+      <span>© 2026 Geri Tuneva</span>
+      <a href="https://www.linkedin.com/in/gerituneva/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </footer>
+  </main>
+</body>
+</html>
