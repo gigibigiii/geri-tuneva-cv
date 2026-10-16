@@ -20,6 +20,9 @@
       --line: #e9e5df;
       --accent: #635bff;
       --accent-soft: #eeedff;
+      --glow-1: rgba(99, 91, 255, 0.38);
+      --glow-2: rgba(255, 160, 120, 0.42);
+      --glow-3: rgba(110, 200, 235, 0.34);
     }
     @media (prefers-color-scheme: dark) {
       :root {
@@ -30,6 +33,9 @@
         --line: #2a2a2a;
         --accent: #8f89ff;
         --accent-soft: #23214a;
+        --glow-1: rgba(99, 91, 255, 0.28);
+        --glow-2: rgba(255, 120, 90, 0.14);
+        --glow-3: rgba(60, 160, 210, 0.16);
       }
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -41,6 +47,18 @@
       font-size: 16px;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+    }
+    /* Soft gradient backdrop, fixed so it stays put while the page scrolls */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(70vw 60vh at 5% 0%, var(--glow-1), transparent 70%),
+        radial-gradient(60vw 55vh at 100% 15%, var(--glow-2), transparent 70%),
+        radial-gradient(80vw 60vh at 40% 110%, var(--glow-3), transparent 70%),
+        var(--bg);
     }
     main {
       max-width: 760px;
